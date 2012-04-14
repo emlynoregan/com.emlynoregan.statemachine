@@ -84,7 +84,7 @@ public class StateMachine
 	
 	public interface IStateChange
 	{
-		public void OnNewState(State newState);
+		public void OnNewState(State newState) throws Exception;
 	}
 	
 	private ConcurrentHashMap<SimpleEntry<State, Condition>, State> _transitions;
