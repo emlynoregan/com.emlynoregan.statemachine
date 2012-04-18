@@ -124,7 +124,7 @@ public class StateMachine
 		{
 			final StateMachine lfinalThis = this;
 			
-			new Thread
+			Thread t1 = new Thread
 			(
 				new Runnable() 
 				{
@@ -170,7 +170,7 @@ public class StateMachine
 									if (lfinalThis._stateChangeHandler != null)
 									{
 										final State lfinalTargetState = ltargetState;
-										new Thread
+										Thread t2 = new Thread
 										(
 											new Runnable() 
 											{
@@ -187,14 +187,20 @@ public class StateMachine
 													}
 												}
 											}
-										).start();
+										);
+										
+										t2.setName("PRC-OnNewState");
+										t2.start();
 									}
 								}
 							}
 						}
 					}
 				}
-			).start();
+			);
+			
+			t1.setName("PRC");
+			t1.start();
 		}
 	}
 
