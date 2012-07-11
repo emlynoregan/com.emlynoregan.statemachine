@@ -29,26 +29,22 @@ public class StateMachine
 			return _value;
 		}
 
-        @Override  
         public int compareTo(StringBase other)  
         {  
             return _value.compareTo(other._value);  
         }  
           
-        @Override  
         public boolean equals(Object other)  
         {  
             return (other != null) && (getClass() == other.getClass()) &&   
                 _value.equals(((StringBase)other)._value);  
         }  
           
-        @Override  
         public int hashCode()  
         {  
             return _value.hashCode();  
         }  
-          
-        @Override  
+           
         public String toString()  
         {  
             return _value;  
@@ -128,7 +124,7 @@ public class StateMachine
 			(
 				new Runnable() 
 				{
-					@Override
+
 					public void run() 
 					{
 						synchronized (lfinalThis._processRaisedConditionSyncObj)
@@ -174,7 +170,7 @@ public class StateMachine
 										(
 											new Runnable() 
 											{
-												@Override
+
 												public void run() 
 												{
 													try
@@ -238,7 +234,7 @@ public class StateMachine
 			(
 				new Runnable() 
 				{
-					@Override
+
 					public void run() 
 					{
 						try
